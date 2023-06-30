@@ -7,7 +7,7 @@ export default defineConfig({
     jsxFragment: "Fragment",
   },
   build: {
-    outDir: "../../deploy/public/",
+    outDir: "../build",
     emptyOutDir: true,
     minify: "false",
     rollupOptions: {
