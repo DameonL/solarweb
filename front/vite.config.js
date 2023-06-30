@@ -12,7 +12,7 @@ export default defineConfig({
     minify: "false",
     rollupOptions: {
       output: {
-        entryFileNames: "index.tsx",
+        entryFileNames: "index.js",
       },
     },
   },
