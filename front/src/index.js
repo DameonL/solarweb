@@ -1,3 +1,3 @@
 import renderSite from "./renderSite";
 
-renderSite()
+renderSite();

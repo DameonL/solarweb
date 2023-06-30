@@ -6,4 +6,4 @@ export default function renderSite() {
   root.id = "root";
   document.body.appendChild(root);
   render(<SolarWeb />, root);
-  }
+}
