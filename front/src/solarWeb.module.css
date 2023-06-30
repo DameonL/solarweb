@@ -18,6 +18,19 @@
   overflow-y: auto;
 }
 
+@media (min-width: 800px) {
+  .about {
+    left: 70vw
+  }
+}
+
+@media (max-width: 799px) {
+  .about {
+    align-items: flex-end;
+    background-color: unset;
+  }
+}
+
 .aboutGame {
   width: 25%;
   min-width: 9em;
