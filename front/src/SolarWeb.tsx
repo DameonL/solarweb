@@ -2,12 +2,13 @@ import solarWebStyles, {
   aboutGame,
   aboutGameLabel,
   backgroundImage,
-  beyondBlueSkiesBackground,
+  gameListBackground,
   issueNumber,
 } from "./solarWeb.module.css";
 import { useState } from "preact/hooks";
 import { PopupWindow, PopupWindowOptions } from "./PopupWindow";
 import { h } from "preact";
+import gamesList from "./gamesList";
 
 export default function SolarWeb() {
   const [popupOptions, setPopupOptions] = useState<PopupWindowOptions>();
@@ -34,22 +35,20 @@ export default function SolarWeb() {
         </div>
       </div>
       <div class={solarWebStyles.about}>
-        <div
-          class={`${aboutGame} ${beyondBlueSkiesBackground}`}
+        {Object.keys(gamesList).map(x => <div
+          class={`${aboutGame}`}
           onClick={() => {
             setPopupOptions({
-              content: (
-                <div>
-                  <div>Beyond Blue Skies is a mobile retro shoot 'em up game. More information coming soon!</div>
-                </div>
-              ),
-              label: "Beyond Blue Skies",
+              content: gamesList[x],
+              label: x,
               close: () => setPopupOptions(undefined),
             });
           }}
         >
-          <div class={aboutGameLabel}>Beyond Blue Skies</div>
-        </div>
+          <img class={gameListBackground} src={`/img/${gamesList[x].listingBackground}`} />
+          <div class={aboutGameLabel}>{x}</div>
+        </div>)}
+        
         {popupOptions && <PopupWindow options={popupOptions} />}
       </div>
       <div class={backgroundImage}></div>

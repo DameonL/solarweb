@@ -3,7 +3,6 @@
   "version": "1.0.0",
   "scripts": {
     "build": "cd front && npm run build",
-    "deploy": "npm run build",
     "dev": "cd front && npm run dev"
   },
   "dependencies": {
