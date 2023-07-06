@@ -20,7 +20,7 @@
 
 @media (min-width: 800px) {
   .about {
-    left: 70vw
+    left: 70vw;
   }
 }
 
@@ -29,6 +29,23 @@
     align-items: flex-end;
     background-color: unset;
   }
+}
+
+.aboutCompany {
+  cursor: pointer;
+  position: absolute;
+  left: 5vw;
+  top: 1em;
+  color: rgb(255, 80, 80);
+  background-color: rgb(255, 255, 255, 0.1);
+  padding: 0.5em;
+  text-align: center;
+  transform: skew(-5deg, -10deg) scale(0.9);
+  transition: all 250ms ease-in;
+}
+
+.aboutCompany:hover {
+  transform: skew(-5deg, -10deg) scale(1);
 }
 
 .aboutGame {

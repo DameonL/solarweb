@@ -1,4 +1,5 @@
 import solarWebStyles, {
+  aboutCompany,
   aboutGame,
   aboutGameLabel,
   backgroundImage,
@@ -33,6 +34,7 @@ export default function SolarWeb() {
             )}
           </div>
         </div>
+        <div class={aboutCompany}>About</div>
       </div>
       <div class={solarWebStyles.about}>
         {Object.keys(gamesList).map(x => <div
