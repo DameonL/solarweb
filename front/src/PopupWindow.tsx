@@ -1,5 +1,5 @@
 import { VNode, h } from "preact";
-import { closeButton, komika, popupWindow, title } from "./solarWeb.module.css";
+import { closeButton, komika, popupWindow, title } from "./common.module.css";
 import { useEffect } from "preact/hooks";
 import { GameOptions } from "./gamesList";
 
