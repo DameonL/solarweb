@@ -7,12 +7,13 @@ import solarWebStyles, {
   issueNumber,
 } from "./solarWeb.module.css";
 import { useState } from "preact/hooks";
-import { PopupWindow, PopupWindowOptions } from "./PopupWindow";
+import { PopupWindow, PopupWindowContent } from "./PopupWindow";
 import { h } from "preact";
 import gamesList from "./gamesList";
+import AboutCompany from "./AboutCompany";
 
 export default function SolarWeb() {
-  const [popupOptions, setPopupOptions] = useState<PopupWindowOptions>();
+  const [popupOptions, setPopupOptions] = useState<PopupWindowContent>();
 
   return (
     <div>
@@ -34,26 +35,34 @@ export default function SolarWeb() {
             )}
           </div>
         </div>
-        <div class={aboutCompany}>About</div>
-      </div>
-      <div class={solarWebStyles.about}>
-        {Object.keys(gamesList).map(x => <div
-          class={`${aboutGame}`}
+        <div
+          class={aboutCompany}
           onClick={() => {
             setPopupOptions({
-              content: gamesList[x],
-              label: x,
-              close: () => setPopupOptions(undefined),
+              title: "About Us",
+              render: AboutCompany,
             });
           }}
         >
-          <img class={gameListBackground} src={`/img/${gamesList[x].listingBackground}`} />
-          <div class={aboutGameLabel}>{x}</div>
-        </div>)}
-        
-        {popupOptions && <PopupWindow options={popupOptions} />}
+          About
+        </div>
       </div>
-      <div class={backgroundImage}></div>
+      <div class={solarWebStyles.about}>
+        {gamesList.map((x) => (
+          <div
+            class={`${aboutGame}`}
+            onClick={() => {
+              setPopupOptions(x);
+            }}
+          >
+            <img class={gameListBackground} src={`/img/${x.background}`} />
+            <div class={aboutGameLabel}>{x.title}</div>
+          </div>
+        ))}
+
+        {popupOptions && <PopupWindow options={{ close: () => setPopupOptions(undefined) }} content={popupOptions} />}
+      </div>
+      <div class={backgroundImage} />
     </div>
   );
 }

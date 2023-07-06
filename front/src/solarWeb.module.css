@@ -1,9 +1,8 @@
 .about {
-  max-width: 40em;
+  max-width: 30em;
   margin: auto;
   background-color: rgb(15, 15, 15, 0.75);
   color: white;
-  padding: 1em 1em 0 1em;
   align-items: flex-start;
   justify-content: center;
   display: flex;
@@ -12,8 +11,6 @@
   bottom: 0px;
   position: absolute;
   top: 10vw;
-  left: 0px;
-  width: auto;
   right: 0px;
   overflow-y: auto;
 }
@@ -31,6 +28,7 @@
   text-align: center;
   transform: skew(-5deg, -10deg) scale(0.9);
   transition: all 250ms ease-in;
+  z-index: 1000;
 }
 
 .aboutCompany:hover {

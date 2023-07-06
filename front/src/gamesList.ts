@@ -1,13 +1,8 @@
-import { VNode } from "preact";
+import { PopupWindowContent } from "./PopupWindow";
 import BeyondBlueSkies from "./games/BeyondBlueSkies";
 
-export interface GameOptions {
-  render: VNode | (() => VNode);
-  listingBackground: string;
-}
-
-const gamesList: { [name: string]: GameOptions } = {
-  "Beyond Blue Skies": { render: BeyondBlueSkies, listingBackground: "spaceships.jpg" },
-};
+const gamesList: PopupWindowContent[] = [
+  BeyondBlueSkies,
+];
 
 export default gamesList;

@@ -1,15 +1,19 @@
 import { VNode, h } from "preact";
-import { closeButton, komika, popupWindow, title } from "./common.module.css";
+import { closeButton, content, popupWindow, title, titleBar } from "./popupWindow.module.css";
+import { komika } from "./common.module.css";
 import { useEffect } from "preact/hooks";
-import { GameOptions } from "./gamesList";
+
+export interface PopupWindowContent {
+  title: string;
+  background?: string;
+  render: VNode | (() => VNode);
+}
 
 export interface PopupWindowOptions {
-  label: string;
-  content: GameOptions;
   close: Function;
 }
 
-export function PopupWindow(props: { options: PopupWindowOptions }) {
+export function PopupWindow(props: { content: PopupWindowContent; options: PopupWindowOptions }) {
   useEffect(() => {
     const closeWindow = (event: MouseEvent) => {
       event.stopPropagation();
@@ -31,11 +35,13 @@ export function PopupWindow(props: { options: PopupWindowOptions }) {
         props.options.close();
       }}
     >
-      <div class={closeButton} />
-      <div class={`${komika} ${title}`}>{props.options.label}</div>
-      {typeof props.options.content.render === "function"
-        ? props.options.content.render()
-        : props.options.content.render}
+      <div class={titleBar}>
+        <div class={closeButton} />
+        <div class={`${komika} ${title}`}>{props.content.title}</div>
+      </div>
+      <div class={content}>
+        {typeof props.content.render === "function" ? props.content.render() : props.content.render}
+      </div>
     </div>
   );
 }
