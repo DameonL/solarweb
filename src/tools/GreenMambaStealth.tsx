@@ -5,12 +5,12 @@ const GreenMambaStealth: PopupWindowContent = {
   title: "Green Mamba",
   render: (
     <div>
-      <div>Green Mamba Stealth is a powerful open source stealth system for Unity.</div>
+      <div>Green Mamba Stealth is a robust and flexible stealth system for Unity.</div>
       <div>
-        With real-time analysis of both baked and dynamic shadows affecting a character, Green Mamba is able to deliver
-        an accurate rating indicating how visible a character is. Green Mamba is sensitive to take into account both the
-        darkness of the shadows, but how much of the player is in the shadow.
+        Whether your scene uses baked shadows, real-time lighting, or both. Green Mamba delivers an accurate rating that
+        takes into account not just whether a shadow falls onto your player, but also how much shadow falls on them.
       </div>
+      <div>Provide your players with unparalleled stealth realism for the ultimate immersive experience.</div>
       <div>
         <a href="https://github.com/DameonL/GreenMambaStealth" target="_blank">
           Grab the code from GitHub
