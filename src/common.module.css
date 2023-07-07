@@ -1,0 +1,43 @@
+@font-face {
+  font-family: komika;
+  src: url("/fonts/KOMIKAX_.ttf");
+}
+
+a,
+a:visited {
+  color: rgb(255, 80, 80);
+  font-size: 90%;
+  transition: font-size 250ms ease-out;
+}
+
+a:hover {
+  transform: scale(1);
+  font-size: 100%;
+}
+
+body {
+  background-color: black;
+  color: rgb(21, 36, 46);
+  font-size: 2em;
+  margin: unset;
+  overflow: hidden;
+}
+
+input,
+select,
+textarea {
+  font-size: inherit;
+}
+
+textarea {
+  width: 100%;
+  min-height: 10em;
+}
+
+label {
+  margin-right: 1em;
+}
+
+.komika {
+  font-family: "komika", "Times New Roman", Times, serif;
+}

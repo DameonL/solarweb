@@ -5,9 +5,11 @@
   left: 0px;
   right: 0px;
   margin: 0.1em;
+  color: rgb(255, 255, 255);
   background-color: rgb(0, 0, 0);
   overflow-y: auto;
-  border: 2px solid rgb(255, 255, 255, 0.5);
+  border: 5px solid rgb(255, 255, 255, 0.5);
+  border-radius: 0.25em;
 }
 
 .popupWindow > .titleBar {
@@ -39,6 +41,14 @@
 .popupWindow > .content {
   text-align: center;
   padding: 0.5em;
+}
+
+.popupWindow > .content > div > div {
+  margin-bottom: 1em;
+}
+
+.popupWindow > .content > div > :last-child {
+  margin-bottom: unset;
 }
 
 ::-webkit-scrollbar {

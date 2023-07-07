@@ -14,26 +14,25 @@ export interface PopupWindowOptions {
 }
 
 export function PopupWindow(props: { content: PopupWindowContent; options: PopupWindowOptions }) {
-  useEffect(() => {
-    const closeWindow = (event: MouseEvent) => {
-      event.stopPropagation();
-      props.options.close();
-    };
+  function closeWindow(event: MouseEvent) {
+    if (document.activeElement !== document.body) return;
 
-    document.addEventListener("click", closeWindow);
+    event.stopPropagation();
+    props.options.close();
+  }
+
+  useEffect(() => {
+    document.body.addEventListener("click", closeWindow);
 
     return () => {
-      document.removeEventListener("click", closeWindow);
+      document.body.removeEventListener("click", closeWindow);
     };
   }, []);
 
   return (
     <div
       class={popupWindow}
-      onClick={(event) => {
-        event.stopPropagation();
-        props.options.close();
-      }}
+      onClick={closeWindow}
     >
       <div class={titleBar}>
         <div class={closeButton} />
