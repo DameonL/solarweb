@@ -3,4 +3,4 @@ deploy
 .env
 .firebase
 firebase-debug.log
-front/build
+build
